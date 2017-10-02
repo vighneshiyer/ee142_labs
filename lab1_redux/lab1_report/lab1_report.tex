@@ -11,6 +11,50 @@
 \markboth{\headertext}{\headertext}
 \thispagestyle{empty}
 
-\section*{}
+\appendix
+\section{Calibration Details on the E5071C VNA}
+The E-cal and the female/male calibration triangles are broken or don't provide good enough calibrations.
+The failure mode seen with these calibration standards was occasional gain (more than 0dB return loss) on $S_{11}$ at a particular band when a short or open was connected after calibration.
 
+We also noticed that the female separated calibration standards didn't give a very good result. The only standards that work well are the male separated standards.
+
+When using the male cal standards, (85052-60006 - Short, 85052-60008 - Open, 902C - Load), a F-F thru needs to be used with a known delay of 51 ps, and sometimes a M-M thru needs to be used with a known delay of 98.9 ps.
+When performing transmission calibration (2-port), use the M-M thru and the delay value of 98.9 ps.
+This M-M thru described above is the SMA thru, \emph{NOT} the 3.5mm thru. You will know which one is which when inspecting the dielectric.
+
+\textbf{Conclusion: Use separated male standards from 85052E.}
+\section{Notes from Previous Lab 1 Attempt}
+
+Port extensions performed on port 1 and 2 to move reference plane to end of SMA connector:
+\begin{itemize}
+    \item 38 ps delay (13.7mm equivalent electrical length on port 1 and 13.67mm on port 2)
+    \item Loss @ DC = 0 dB
+    \item Loss 1: 33mdB @ 1 Ghz
+    \item Loss 2: -23mdB @ 500 Mhz
+\end{itemize}
+
+Attenuation per frequency measurements taken with the SMA dummy short:
+\begin{itemize}
+    \item Port 1 (598.19 Mhz, -0.04771 dB), (1.352510 Ghz, -0.08127 dB)
+    \item Port 2 (598.19 Mhz, -0.05873 dB), (1.352510 Ghz, -0.08767 dB)
+\end{itemize}
+
+Measurements performed with the thru board:
+\begin{itemize}
+    \item Length of thru board $d_0 = 0.926 \text{ in} = 2.352 \text{ cm}$
+    \item 156 ps of electrical delay $\tau_0$ required to produce flat phase on $S_{21}$
+    \item $v = c_p = \frac{d_0}{\tau_0} = 1.507e8 \text{ m/s}$
+    \item $\epsilon_{eff} = 3.96$ (compared to FR4 typical 4.4)
+    \item $Z_{0,measured} = 49.2 \Omega$ at 4.22 Ghz
+\end{itemize}
+
+Calibration to get a 0.7mm length transmission line:
+\begin{itemize}
+    \item Port extend port 1 and 2 with 109ps to form a 0.7mm thru line on the thru board.
+    \item To make the loss maximally flat at 0dB around 600 Mhz use:
+    \begin{itemize}
+        \item Loss 1: 74 mdB @ 1 Ghz
+        \item Loss 2: -35 mdB @ 500 Mhz
+    \end{itemize}
+\end{itemize}
 \end{document}
