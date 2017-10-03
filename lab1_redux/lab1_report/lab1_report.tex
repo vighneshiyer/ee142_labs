@@ -11,6 +11,47 @@
 \markboth{\headertext}{\headertext}
 \thispagestyle{empty}
 
+\section{Calibration and SMA Dummy Short Modeling}
+We perform calibration using the separate male calibration standards (see appendix).
+To do this calibration, we need to use a 50ps F-F thru on both cables, we will compensate this out later.
+Unfortunately, the F-F thru has some loss that we can't characterize, but it's very small at our band of interest.
+
+To perform the SMA dummy short modeling, we first dial in -50ps delay on the port extension for port 1 and 2. Then S-parameters are captured for modeling.
+
+\textbf{TODO: Insert SMA dummy short modeling results and modeling strategy}
+
+Now the reference plane can be moved to the edge of the SMA dummy short.
+To achieve flat phase on $S_{11}$ and $S_{22}$, we need an electrical delay of 76.35 ps, which translates to an SMA dummy short propagation time of 38.175 ps (this closely matches our previous result).
+
+The final port extension value is $-50 + 38.175 = -11.825$ ps.
+
+To achieve flat gain on $S_{11}$ and $S_{22}$, we use these values:
+
+\begin{itemize}
+    \item Loss 1: -0.01 dB @ 2.75 Ghz
+    \item No Loss 2 or Loss at DC
+\end{itemize}
+
+This accomplishes the task of keeping a flat $S_{11}$ curve up until 3 Ghz or so. This also compensates for the loss characteristics of the SMA connector over those of the F-F thru.
+
+\section{Thru Board T-Line}
+
+\textbf{TODO: thru\_refedges.s2p data and plots}
+
+This doesn't seem to work properly as I only need around 80ps electrical delay to flatten the $S_{21}$ phase response. Clearly something is getting counted twice here, but I can't find out what.
+
+\section{Open in T-Line Model}
+
+\section{Via Model - ShuntShort}
+
+\section{0603 Package Parasitics Model w/ $0 \Omega$ Resistor}
+
+\section{0603 Inductor Parasitics Model}
+
+\section{0603 Capacitor Parasitics Model}
+
+\section{0603 Capacitor HF Analysis Model}
+
 \appendix
 \section{Calibration Details on the E5071C VNA}
 The E-cal and the female/male calibration triangles are broken or don't provide good enough calibrations.
@@ -57,4 +98,6 @@ Calibration to get a 0.7mm length transmission line:
         \item Loss 2: -35 mdB @ 500 Mhz
     \end{itemize}
 \end{itemize}
+
+The rest of this lab can be performed with these measurements alone.
 \end{document}
