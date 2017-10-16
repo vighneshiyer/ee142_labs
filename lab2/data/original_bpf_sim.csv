@@ -1,33 +1,4 @@
-"freq
-References : ['S(1,1)','S(1,2)','S(2,1)','S(2,2)']
-Dependency : [freq]
-Num. Points : [1000]
-Matrix Size : scalar
-Type : Real","S(1,1)
-References : []
-Dependency : [freq]
-Num. Points : [1000]
-Matrix Size : scalar
-Type : Complex
-Complex Format : Real/Imag","S(1,2)
-References : []
-Dependency : [freq]
-Num. Points : [1000]
-Matrix Size : scalar
-Type : Complex
-Complex Format : Real/Imag","S(2,1)
-References : []
-Dependency : [freq]
-Num. Points : [1000]
-Matrix Size : scalar
-Type : Complex
-Complex Format : Real/Imag","S(2,2)
-References : []
-Dependency : [freq]
-Num. Points : [1000]
-Matrix Size : scalar
-Type : Complex
-Complex Format : Real/Imag"
+S11, S12, S21, S22
 1.00000000000000000000 MHz,-0.99118236724096364654 + j0.00058476888480676469 ,0.00000011993748880941 + j0.00000002834314174319 ,0.00000011993748880941 + j0.00000002834314174319 ,-0.99118236724096353552 + j0.00058476888480676491 
 2.00000000000000000000 MHz,-0.99118170230311675173 + j0.00116954475833306129 ,0.00000011349139293668 + j0.00000005637144088533 ,0.00000011349139293668 + j0.00000005637144088533 ,-0.99118170230311675173 + j0.00116954475833306107 
 3.00000000000000000000 MHz,-0.99118059403807057262 + j0.00175433460957225744 ,0.00000010274577136505 + j0.00000008377001783501 ,0.00000010274577136505 + j0.00000008377001783501 ,-0.99118059403807057262 + j0.00175433460957225788 
